@@ -9,7 +9,7 @@ import {
 const BASE_URL = "https://ecom-backend-ruddy-ten.vercel.app";
 
 export const register = (username, email, password) => async (dispatch) => {
-  const response = await axios.post(`${BASE_URL}register`, {
+  const response = await axios.post(`${BASE_URL}/register`, {
     username,
     email,
     password,
@@ -20,7 +20,7 @@ export const register = (username, email, password) => async (dispatch) => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-  const response = await axios.post(`${BASE_URL}login`, {
+  const response = await axios.post(`${BASE_URL}/login`, {
     email,
     password,
   });
