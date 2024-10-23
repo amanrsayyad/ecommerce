@@ -6,7 +6,7 @@ import {
   logout as logoutAction,
 } from "../reducers/authReducer";
 
-const BASE_URL = "https://ecom-backend-ruddy-ten.vercel.app/";
+const BASE_URL = "https://ecom-backend-ruddy-ten.vercel.app";
 
 export const register = (username, email, password) => async (dispatch) => {
   const response = await axios.post(`${BASE_URL}/register`, {
