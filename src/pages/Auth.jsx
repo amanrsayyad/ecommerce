@@ -31,107 +31,109 @@ const Auth = () => {
   };
 
   return (
-    <AuthContainer>
-      <Header />
-      <AuthMain>
-        <AuthCard>
-          <h2>{isRegistering ? "Register" : "Login"}</h2>
-          <AuthForm>
-            {isRegistering ? (
-              <>
-                {/* Register  */}
-                <div className="input-container">
-                  <label>Username</label>
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div className="input-container">
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    name=""
-                    id=""
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div className="input-container">
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    name=""
-                    id=""
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                  />
-                </div>
-                <button onClick={handleRegister}>
-                  {isRegistering ? "Register" : "Login"}
-                </button>
-              </>
-            ) : (
-              <>
-                {/* Login  */}
-                <div className="input-container">
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    name=""
-                    id=""
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div className="input-container">
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    name=""
-                    id=""
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                  />
-                </div>
-                <button onClick={handleLogin}>
-                  {isRegistering ? "Register" : "Login"}
-                </button>
-              </>
-            )}
-          </AuthForm>
-          <AuthLinks className="d-flex f-col">
-            <label>--- OR ---</label>
-            <div>
+    <>
+      <AuthContainer>
+        <Header />
+        <AuthMain>
+          <AuthCard>
+            <h2>{isRegistering ? "Register" : "Login"}</h2>
+            <AuthForm>
               {isRegistering ? (
-                <p>
-                  Already Have An Account?{" "}
-                  <span onClick={() => setIsRegistering(!isRegistering)}>
-                    Sign In
-                  </span>
-                </p>
+                <>
+                  {/* Register  */}
+                  <div className="input-container">
+                    <label>Username</label>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div className="input-container">
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      name=""
+                      id=""
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div className="input-container">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      name=""
+                      id=""
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                  <button onClick={handleRegister}>
+                    {isRegistering ? "Register" : "Login"}
+                  </button>
+                </>
               ) : (
-                <p>
-                  Create An Account?{" "}
-                  <span onClick={() => setIsRegistering(!isRegistering)}>
-                    Sign Up
-                  </span>
-                </p>
+                <>
+                  {/* Login  */}
+                  <div className="input-container">
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      name=""
+                      id=""
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div className="input-container">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      name=""
+                      id=""
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                  <button onClick={handleLogin}>
+                    {isRegistering ? "Register" : "Login"}
+                  </button>
+                </>
               )}
-            </div>
-          </AuthLinks>
-        </AuthCard>
-      </AuthMain>
+            </AuthForm>
+            <AuthLinks className="d-flex f-col">
+              <label>--- OR ---</label>
+              <div>
+                {isRegistering ? (
+                  <p>
+                    Already Have An Account?{" "}
+                    <span onClick={() => setIsRegistering(!isRegistering)}>
+                      Sign In
+                    </span>
+                  </p>
+                ) : (
+                  <p>
+                    Create An Account?{" "}
+                    <span onClick={() => setIsRegistering(!isRegistering)}>
+                      Sign Up
+                    </span>
+                  </p>
+                )}
+              </div>
+            </AuthLinks>
+          </AuthCard>
+        </AuthMain>
+      </AuthContainer>
       <Footer />
-    </AuthContainer>
+    </>
   );
 };
 
