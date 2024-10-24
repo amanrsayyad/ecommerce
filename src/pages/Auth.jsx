@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, register } from "../actions/authActions";
 import styled from "styled-components";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Auth = () => {
   const [isRegistering, setIsRegistering] = useState(true);
@@ -129,6 +130,7 @@ const Auth = () => {
           </AuthLinks>
         </AuthCard>
       </AuthMain>
+      <Footer />
     </AuthContainer>
   );
 };
