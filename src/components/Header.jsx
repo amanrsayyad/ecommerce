@@ -10,6 +10,7 @@ import { IoMenuSharp } from "react-icons/io5";
 import { FiLogOut } from "react-icons/fi";
 
 const Header = () => {
+  const [fix, setFix] = useState(false);
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -17,9 +18,19 @@ const Header = () => {
     dispatch(logout());
   };
 
+  function setFixed() {
+    if (window.scrollY >= 100) {
+      setFix(true);
+    } else {
+      setFix(false);
+    }
+  }
+
+  window.addEventListener("scroll", setFixed);
+
   return (
     <HeaderContainer>
-      <header>
+      <header className={fix ? "shadow" : ""}>
         {/* nav   */}
         <div className="nav container">
           {/* menu icon  */}
